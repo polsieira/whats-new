@@ -57,9 +57,7 @@ Click this link: https://posi7790.github.io/whats-new/
 
 ## Screenshots
 
-![Uploading screencapture-posi7790-github-io-whats-new-2019-10-01-17_34_56.png…]()
-
-
+![screencapture-posi7790-github-io-whats-new-2019-10-01-17_34_56](https://user-images.githubusercontent.com/25589695/66008125-a37a9500-e4a4-11e9-824c-c166635ee8ac.png)
 
 ## User Instruction
 
