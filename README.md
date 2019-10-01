@@ -1,64 +1,74 @@
 # What's New?
 
-This application was built with `create-react-app`.
+# Overlook
 
-### Set Up
+A project during my third module at Turing School of Software Design. For this project, I work on developing some muscle memory in building out simple React components and passing data down as props. The project aids on giving me an understanding of the difference between class components and function components and getting a sense of when to use one over the other. Goals of this project are:
 
-Clone down this repo.
+* Write squeaky clean, well refactored code using ES6 syntax.
+* Learn to pass information between components using props.
+* Learn to write readable JSX (your render methods/return statements should be clean and simple).
+* Use propTypes for every component receiving props.
+* Learn how to unit test React components including snapshot testing, methods, and changes in state.
 
-Because you don't want to be pushing your updates to this boilerplate repository, we're going to have to do a few things to get set up with your own repository.
 
-1. On GitHub, create a new, empty repository and name it something like 'whats-new'.
-2. Update the current remote (called "origin") so that it points at the URL of the repository you just created on GitHub. Read how to do this [here](https://help.github.com/en/articles/changing-a-remotes-url).
-3. Once you've updated the remote, you should run `npm install`, commit, and then push your initial commit to your personal repository. You will need to use the `-u` flag when you push (like this: `git push -u origin master`).
-4. Run `npm start` to start up your React server. (You will see errors!)
+## Setup
 
-### Expectations / Rules
+### Clone Down and Run Locally
 
-Build a React App that displays different categories of current news.
+Fork and clone down repo.
 
-![what's new screenshot](./screenshots/whats-new.png)
+Then install the library dependencies. Run:
 
-We want to see good commit habits - atomic commits that log small, focused changesets.
+```bash
+npm install
+```
 
-### Iteration 0
+In the terminal, run:
 
-Get set up (per the instructions above)!
+```bash
+npm start
+```
 
-We've provided a boilerplate for you to work with. Look through the file structure to get a sense of the app.
+You will see a bunch of lines output to your terminal: 
 
-Notice that we have multiple stylesheets - one for each component. You are welcome to style this application however you'd like as long as it keeps the core functionality. We got you started with a little styling, but feel free to get creative. (Remember, though - most of your energy should be spent on learning React, not styling.)
+```bash
+Compiled successfully!
 
-### Iteration 1
+You can now view whats-new in the browser.
 
-Create a NewsContainer component, which will act as a container that renders each of our news articles. For now, the news articles being displayed will be "Local News". Figure out how to pass information from `App.js` to `NewsContainer.js`!
+  Local:            http://localhost:3000/
+  On Your Network:  http://10.1.3.3:3000/
 
-Then create a NewsArticle component. Each NewsArticle card will display: the image, the headline, the description, and the url (see the screenshot above for an idea).
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+```
 
-In your NewsContainer component, create NewsArticle cards that have the information each needs to display properly.
+### Run in GitHub Pages
 
-**Test Your App with snapshot tests.**
+Click this link: https://posi7790.github.io/whats-new/
 
-### Iteration 2
+---
 
-Take a look at the `data` directory and inspect the other news data that is included.  There is an `entertainment.js`, `health.js`, `science.js`, and `technology.js` file.  Import the data and put it in `App's` state.  Create a Menu component that has navigation to display the different news articles.  When selecting a navigation link, it should display the relevant news articles in the NewsContainer component.  How can you reuse components?
+### Built with:
 
-**Add/Update any snapshot tests necessary.  Also add tests for any new methods you have created or changes in state** 
+* HTML5
+* SASS
+* JavaScript
+* React
+* Webpack
 
-### Iteration 3 (extension - do not attempt until iterations 0 - 2 are completed)
+## Screenshots
 
-Add in the functionality so that a user can search through the news articles.  After a user has typed a search query, a user should either be able to press `Enter` or `Search` to filter out the correct news articles.  The search functionality should only filter through the selected news articles.
+<details>
+  <summary>Main</summary>
+  
+</details>
 
-**Add/Update any tests necessary.  Remember to include tests for any new methods you have created or changes in state** 
 
-### Iteration 4 (extension - do not attempt until iterations 0 - 3 are completed)
+## User Instruction
 
-Instead of importing the news data from the data directory, use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to get the data.  Read this [article](https://www.robinwieruch.de/react-fetching-data) on where you should fetch your data in React.
+Feel free to look at some of my favorite news articles! Just kidding it is a random API, but you can search for your favorite topics using the search bar or using the categories on the left aside! Click on the link to be transported to the full article if you're really interested.
 
-Here is what the endpoint looks like to get the news data.
+## Authors
 
-| Purpose | URL | Verb | Request Body | Sample Success Response |
-|----|----|----|----|----|
-| Get all news data | `https://whats-new-api.herokuapp.com/api/v1/news` | GET | none | `{"entertainment": [{}, {}, ...], "health": [{}, {}, ...], ...}` |
-
-**Note: This will likely break some of your previous tests.  No worries, we will discuss testing async functionality in a future lesson.**
+Pol Sieira
