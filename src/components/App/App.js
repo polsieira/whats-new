@@ -30,12 +30,25 @@ class App extends Component {
     });
   }
 
+  searchArticles = searchedText => {
+    let searchedArticles = this.state.currentTab.filter(article => {
+      return (
+        article.headline.toUpperCase().includes(searchedText.toUpperCase()) ||
+        article.description.toUpperCase().includes(searchedText.toUpperCase())
+      )
+    });
+
+    this.setState({
+      currentTab: searchedArticles
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Menu data={this.state.data} changeState={this.changeState} />
         <div className="wrapper--news">
-          <SearchForm />
+          <SearchForm searchArticles={this.searchArticles} />
           <NewsContainer currentTab={this.state.currentTab} />
         </div>
       </div>

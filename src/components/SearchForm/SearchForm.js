@@ -1,16 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './SearchForm.scss';
 
-const SearchForm = () => {
-  return (
-    <header className="SearchForm">
-      <input
-        className="input--search"
-        placeholder="Search for news articles here...">
-      </input>
-      <button className="button--search">Search Now</button>
-    </header>
-  )
+class SearchForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      search: "",
+    }
+  }
+
+  handleSearch = event => {
+    event.preventDefault();
+    this.props.searchArticles(this.state.search);
+    this.resetState();
+  }
+
+  resetState = () => {
+    this.setState({
+      search: ""
+    })
+  }
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  render() {
+    return (
+      <header className="SearchForm" >
+        <input
+          className="input--search"
+          placeholder="Search for news articles here..."
+          name="search"
+          value={this.state.search}
+          onChange={event => this.handleChange(event)}>
+        </input>
+        <button
+          className="button--search"
+          onClick={event => this.handleSearch(event)}>
+          Search Now
+        </button>
+      </header>
+    )
+  }
 }
 
 export default SearchForm;
