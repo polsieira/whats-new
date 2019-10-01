@@ -1,0 +1,28 @@
+.NewsArticle {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  width: 90%;
+
+  h3 {
+    padding: 8px;
+  }
+
+  p {
+    padding: 10px;
+  }
+
+  a {
+    background:  #B56AF0;
+    color: #ffffff;
+    padding: 5px;
+    text-decoration: none;
+  }
+}
+
+.image--news {
+  width: 100%;
+}
+

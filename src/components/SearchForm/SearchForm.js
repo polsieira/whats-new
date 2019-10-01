@@ -1,11 +1,14 @@
 import React from 'react';
-import './SearchForm.css';
+import './SearchForm.scss';
 
 const SearchForm = () => {
   return (
     <header className="SearchForm">
-      <input className="input--search"></input>
-      <button className="button--search"></button>
+      <input
+        className="input--search"
+        placeholder="Search for news articles here...">
+      </input>
+      <button className="button--search">Search Now</button>
     </header>
   )
 }

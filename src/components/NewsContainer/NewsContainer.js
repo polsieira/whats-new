@@ -1,9 +1,9 @@
 import React from 'react';
-import './NewsContainer.css';
+import './NewsContainer.scss';
 import NewsArticle from '../NewsArticle/NewsArticle';
 
-const NewsContainer = ({ local }) => {
-  const newsArticles = local.map(article => {
+const NewsContainer = ({ currentTab }) => {
+  const newsArticles = currentTab.map(article => {
     return (
       <NewsArticle
         key={article.id}
@@ -16,7 +16,7 @@ const NewsContainer = ({ local }) => {
   })
 
   return (
-    <div className='newsArticle-container'>
+    <div className='NewsContainer'>
       {newsArticles}
     </div>
   )
