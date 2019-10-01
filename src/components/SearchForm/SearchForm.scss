@@ -26,4 +26,12 @@
   height: 30px;
   padding: 5px;
   width: 15%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }

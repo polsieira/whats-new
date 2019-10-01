@@ -24,23 +24,16 @@ class App extends Component {
     }
   }
 
-  changeState(newState) {
+  changeState = (newState) => {
     this.setState({
-      data: {
-        local,
-        health,
-        entertainment,
-        science,
-        technology
-      },
-      current: newState
+      currentTab: newState
     });
   }
 
   render() {
     return (
       <div className="App">
-        <Menu />
+        <Menu data={this.state.data} changeState={this.changeState} />
         <div className="wrapper--news">
           <SearchForm />
           <NewsContainer currentTab={this.state.currentTab} />

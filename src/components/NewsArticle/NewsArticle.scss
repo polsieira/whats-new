@@ -15,14 +15,23 @@
   }
 
   a {
+    align-items: center;
     background:  #B56AF0;
     color: #ffffff;
+    display: flex;
+    justify-content: space-around;
     padding: 5px;
     text-decoration: none;
+    
+    &:active {
+      background:  #FFAE02;
+    }
   }
 }
 
 .image--news {
+  object-fit: cover;
+  height: 300px;
   width: 100%;
 }
 
