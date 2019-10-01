@@ -1,7 +1,5 @@
 # What's New?
 
-# Overlook
-
 A project during my third module at Turing School of Software Design. For this project, I work on developing some muscle memory in building out simple React components and passing data down as props. The project aids on giving me an understanding of the difference between class components and function components and getting a sense of when to use one over the other. Goals of this project are:
 
 * Write squeaky clean, well refactored code using ES6 syntax.
