@@ -20,18 +20,20 @@ class App extends Component {
         science,
         technology
       },
-      currentTab: local
+      currentCategory: local,
+      displayedArticles: local
     }
   }
 
-  changeState = (newState) => {
+  changeState = (event) => {
     this.setState({
-      currentTab: newState
+      currentCategory: this.state.data[event.target.id],
+      displayedArticles: this.state.data[event.target.id]
     });
   }
 
   searchArticles = searchedText => {
-    let searchedArticles = this.state.currentTab.filter(article => {
+    let searchedArticles = this.state.currentCategory.filter(article => {
       return (
         article.headline.toUpperCase().includes(searchedText.toUpperCase()) ||
         article.description.toUpperCase().includes(searchedText.toUpperCase())
@@ -39,17 +41,17 @@ class App extends Component {
     });
 
     this.setState({
-      currentTab: searchedArticles
+      displayedArticles: searchedArticles
     })
   }
 
   render() {
     return (
       <div className="App">
-        <Menu data={this.state.data} changeState={this.changeState} />
+        <Menu changeState={this.changeState} />
         <div className="wrapper--news">
           <SearchForm searchArticles={this.searchArticles} />
-          <NewsContainer currentTab={this.state.currentTab} />
+          <NewsContainer currentTab={this.state.displayedArticles} />
         </div>
       </div>
     );
