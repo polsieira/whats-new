@@ -2,8 +2,8 @@ import React from 'react';
 import './NewsContainer.scss';
 import NewsArticle from '../NewsArticle/NewsArticle';
 
-const NewsContainer = ({ currentTab }) => {
-  const newsArticles = currentTab.map(article => {
+const NewsContainer = ({ displayedArticles }) => {
+  const newsArticles = displayedArticles.map(article => {
     return (
       <NewsArticle
         key={article.id}

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu should match the snapshot with all data passed in correctly 1`] = `
+<aside
+  className="Menu"
+>
+  <h1
+    className="header"
+  >
+    What's 
+    <span
+      className="header--yellow"
+    >
+      New?
+    </span>
+  </h1>
+  <ul>
+    <li
+      id="local"
+      onClick={[Function]}
+    >
+      <IoIosPin
+        size={30}
+      />
+      Local News
+    </li>
+    <li
+      id="technology"
+      onClick={[Function]}
+    >
+      Technology
+    </li>
+    <li
+      id="entertainment"
+      onClick={[Function]}
+    >
+      Entertainment
+    </li>
+    <li
+      id="science"
+      onClick={[Function]}
+    >
+      Science
+    </li>
+    <li
+      id="health"
+      onClick={[Function]}
+    >
+       Health
+    </li>
+  </ul>
+</aside>
+`;

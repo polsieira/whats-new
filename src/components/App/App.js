@@ -51,7 +51,7 @@ class App extends Component {
         <Menu changeState={this.changeState} />
         <div className="wrapper--news">
           <SearchForm searchArticles={this.searchArticles} />
-          <NewsContainer currentTab={this.state.displayedArticles} />
+          <NewsContainer displayedArticles={this.state.displayedArticles} />
         </div>
       </div>
     );
