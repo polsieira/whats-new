@@ -44,15 +44,30 @@ describe('SearchForm', () => {
     expect(wrapper.state()).toEqual(clearedState);
   });
 
-  it('should handle search when search button is clicked', () => {
+  it('should call searchArticles and resetState when handleSearch is called with an event', () => {
+    //Setup
+    const mockEvent = { preventDefault: jest.fn() };
+    wrapper.instance().resetState = jest.fn();
+
+    //Execution
+    wrapper.instance().handleSearch(mockEvent);
+
+    //Expectation
+    expect(wrapper.instance().resetState).toHaveBeenCalled();
+    expect(mockSearchArticles).toHaveBeenCalled();
+
+  });
+
+  it('should call handle search when search button is clicked', () => {
     //Setup
     const newState = { search: 'Chicken' };
     wrapper.setState(newState);
-    console.log(wrapper.find('button'))
+    wrapper.instance().handleSearch = jest.fn();
+
     //Execution
     wrapper.find('button').simulate('click');
 
     //Expectation
-    expect(mockSearchArticles).toHaveBeenCalledWith('Chicken');
+    expect(wrapper.instance().handleSearch).toHaveBeenCalled();
   })
 });
