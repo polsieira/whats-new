@@ -29,6 +29,23 @@ describe('SearchForm', () => {
     expect(wrapper.state()).toEqual({ search: 'Chicken' })
   });
 
+  it('should run handleChange on change of the input', () => {
+    //Setup
+    const mockEvent = {
+      target: {
+        name: 'search',
+        value: 'Chick'
+      }
+    }
+    wrapper.instance().handleChange = jest.fn();
+
+    //Execution
+    wrapper.find('input').simulate('change', mockEvent);
+
+    //Expectation
+    expect(wrapper.instance().handleChange).toHaveBeenCalledWith(mockEvent);
+  });
+
   it('should be able to reset its own state', () => {
     //Setup
     const newState = { search: 'Chicken' };
