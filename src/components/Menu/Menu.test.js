@@ -29,5 +29,61 @@ describe('Menu', () => {
       //Expectation
       expect(mockChangeState).toHaveBeenCalledWith(mockEvent);
     });
+    it('category: technology', () => {
+      //Setup
+      const mockEvent = {
+        target: {
+          id: 'technology'
+        }
+      };
+
+      //Execution
+      wrapper.find('li').at(1).simulate('click', mockEvent);
+
+      //Expectation
+      expect(mockChangeState).toHaveBeenCalledWith(mockEvent);
+    });
+    it('category: entertainment', () => {
+      //Setup
+      const mockEvent = {
+        target: {
+          id: 'entertainment'
+        }
+      };
+
+      //Execution
+      wrapper.find('li').at(2).simulate('click', mockEvent);
+
+      //Expectation
+      expect(mockChangeState).toHaveBeenCalledWith(mockEvent);
+    });
+    it('category: science', () => {
+      //Setup
+      const mockEvent = {
+        target: {
+          id: 'science'
+        }
+      };
+
+      //Execution
+      wrapper.find('li').at(3).simulate('click', mockEvent);
+
+      //Expectation
+      expect(mockChangeState).toHaveBeenCalledWith(mockEvent);
+    });
+    it('category: health', () => {
+      //Setup
+      const mockEvent = {
+        target: {
+          id: 'health'
+        }
+      };
+
+      //Execution
+      wrapper.find('li').at(4).simulate('click', mockEvent);
+
+      //Expectation
+      expect(mockChangeState).toHaveBeenCalledWith(mockEvent);
+    });
   })
 });
