@@ -69,5 +69,5 @@ describe('SearchForm', () => {
 
     //Expectation
     expect(wrapper.instance().handleSearch).toHaveBeenCalled();
-  })
+  });
 });
