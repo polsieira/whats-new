@@ -25,6 +25,8 @@ class App extends Component {
     }
   }
 
+
+
   changeState = (event) => {
     this.setState({
       currentCategory: this.state.data[event.target.id],

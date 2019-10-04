@@ -45,6 +45,14 @@ describe('SearchForm', () => {
   });
 
   it('should handle search when search button is clicked', () => {
+    //Setup
+    const newState = { search: 'Chicken' };
+    wrapper.setState(newState);
+    console.log(wrapper.find('button'))
+    //Execution
+    wrapper.find('button').simulate('click');
 
+    //Expectation
+    expect(mockSearchArticles).toHaveBeenCalledWith('Chicken');
   })
 });
