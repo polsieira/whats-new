@@ -46,6 +46,8 @@ describe('SearchForm', () => {
 
   it('should call searchArticles and resetState when handleSearch is called with an event', () => {
     //Setup
+    const newState = { search: 'Chicken' };
+    wrapper.setState(newState);
     const mockEvent = { preventDefault: jest.fn() };
     wrapper.instance().resetState = jest.fn();
 
@@ -54,14 +56,12 @@ describe('SearchForm', () => {
 
     //Expectation
     expect(wrapper.instance().resetState).toHaveBeenCalled();
-    expect(mockSearchArticles).toHaveBeenCalled();
+    expect(mockSearchArticles).toHaveBeenCalledWith('Chicken');
 
   });
 
   it('should call handle search when search button is clicked', () => {
     //Setup
-    const newState = { search: 'Chicken' };
-    wrapper.setState(newState);
     wrapper.instance().handleSearch = jest.fn();
 
     //Execution
