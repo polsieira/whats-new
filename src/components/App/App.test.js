@@ -34,7 +34,7 @@ describe('App', () => {
     wrapper.instance().changeState(mockEvent);
 
     //Expectation
-    expect(wrapper.state('currentCategory')).toEqual(expected);
+    expect(wrapper.state('currentCategory')).toEqual([]);
   });
 
   it('should search articles and only display results', () => {
