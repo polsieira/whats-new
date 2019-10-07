@@ -1,31 +1,45 @@
 import React, { Component } from 'react';
-import local from '../../data/local';
-import health from '../../data/health';
-import entertainment from '../../data/entertainment';
-import science from '../../data/science';
-import technology from '../../data/technology';
 import './App.scss';
 import Menu from '../Menu/Menu';
 import SearchForm from '../SearchForm/SearchForm';
 import NewsContainer from '../NewsContainer/NewsContainer';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       data: {
-        local,
-        health,
-        entertainment,
-        science,
-        technology
+        local: [],
+        health: [],
+        entertainment: [],
+        science: [],
+        technology: []
       },
-      currentCategory: local,
-      displayedArticles: local
+      currentCategory: [],
+      displayedArticles: []
     }
   }
 
-
+  componentDidMount() {
+    const url = 'https://whats-new-api.herokuapp.com/api/v1/news';
+    fetch(url)
+      .then(data => data.json())
+      .then(data => this.setState({
+        data: {
+          local: data.local,
+          health: data.health,
+          entertainment: data.entertainment,
+          science: data.science,
+          technology: data.technology
+        },
+        currentCategory: data.local,
+        displayedArticles:
+          data.local
+      }
+      ))
+      .catch(error => console.log(error))
+  }
 
   changeState = (event) => {
     this.setState({
