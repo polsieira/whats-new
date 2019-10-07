@@ -8,6 +8,7 @@ exports[`SearchForm should match the snapshot with all data passed in correctly 
     className="input--search"
     name="search"
     onChange={[Function]}
+    onKeyDown={[Function]}
     placeholder="Search for news articles here..."
     value=""
   />

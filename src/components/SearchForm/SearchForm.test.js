@@ -65,7 +65,12 @@ describe('SearchForm', () => {
     //Setup
     const newState = { search: 'Chicken' };
     wrapper.setState(newState);
-    const mockEvent = { preventDefault: jest.fn() };
+    const mockEvent = {
+      target: {
+        className: "button--search"
+      },
+      preventDefault: jest.fn()
+    };
     wrapper.instance().resetState = jest.fn();
 
     //Execution
@@ -83,6 +88,20 @@ describe('SearchForm', () => {
 
     //Execution
     wrapper.find('button').simulate('click');
+
+    //Expectation
+    expect(wrapper.instance().handleSearch).toHaveBeenCalled();
+  });
+
+  it('should call handle search when search button is clicked', () => {
+    //Setup
+    wrapper.instance().handleSearch = jest.fn();
+    const mockEvent = {
+      keycode: 13
+    }
+
+    //Execution
+    wrapper.find('input').simulate('keydown', mockEvent);
 
     //Expectation
     expect(wrapper.instance().handleSearch).toHaveBeenCalled();
