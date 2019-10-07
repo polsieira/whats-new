@@ -10,9 +10,11 @@ class SearchForm extends Component {
   }
 
   handleSearch = event => {
-    event.preventDefault();
-    this.props.searchArticles(this.state.search);
-    this.resetState();
+    if (event.keyCode === 13 || event.target.className === "button--search") {
+      event.preventDefault();
+      this.props.searchArticles(this.state.search);
+      this.resetState();
+    }
   }
 
   resetState = () => {
@@ -33,7 +35,8 @@ class SearchForm extends Component {
           placeholder="Search for news articles here..."
           name="search"
           value={this.state.search}
-          onChange={event => this.handleChange(event)}>
+          onChange={event => this.handleChange(event)}
+          onKeyDown={event => this.handleSearch(event)}>
         </input>
         <button
           className="button--search"
