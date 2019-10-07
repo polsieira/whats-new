@@ -43,7 +43,7 @@ To create a production build, use npm run build.
 
 ### Run in GitHub Pages
 
-Click this link: https://posi7790.github.io/whats-new/
+Click this link: https://polsieira.github.io/whats-new/
 
 ---
 
