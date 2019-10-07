@@ -22,30 +22,42 @@ exports[`Menu should match the snapshot with all data passed in correctly 1`] = 
       <IoIosPin
         size={30}
       />
-      Local News
+       Local News
     </li>
     <li
       id="technology"
       onClick={[Function]}
     >
-      Technology
+      <IoMdCog
+        size={30}
+      />
+       Technology
     </li>
     <li
       id="entertainment"
       onClick={[Function]}
     >
-      Entertainment
+      <IoIosMusicalNotes
+        size={30}
+      />
+       Entertainment
     </li>
     <li
       id="science"
       onClick={[Function]}
     >
-      Science
+      <IoIosFlask
+        size={30}
+      />
+       Science
     </li>
     <li
       id="health"
       onClick={[Function]}
     >
+      <IoIosMedkit
+        size={30}
+      />
        Health
     </li>
   </ul>
